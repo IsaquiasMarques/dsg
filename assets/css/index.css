@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 400;
+    src: url('../fonts/Raleway/Raleway-Regular-400.ttf');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 600;
+    src: url('../fonts/Raleway/Raleway-SemiBold-600.ttf');
+}
+@font-face {
+    font-family: 'Raleway Semi-bold Italic';
+    font-weight: 600;
+    src: url('../fonts/Raleway/Raleway-SemiBoldItalic-600.ttf');
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 900;
+    src: url('../fonts/Raleway/Raleway-Black-900.ttf');
+}
+@font-face {
+    font-family: 'Raleway Black Italic';
+    font-weight: 900;
+    src: url('../fonts/Raleway/Raleway-BlackItalic-900.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+    
+}
+body{
+    background-color: #f3f1f1;
+    color: var(--secondary-color);
+}
+
+:root{
+    --primary-color: #80b3a3;
+    --secondary-color: #2b2a28;
+    --button-color: #123043;
+}
+
+.contain{
+    max-width: 1536px;
+    width: 100%;
+    margin: 0px auto;
+    position: relative;
+}
