@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('assets/fonts/Raleway/Raleway.ttf');
+}
+
+:root{
+    --primary-color: #80B3A3;
+    --secondary-color: #464646;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+    font-weight: 500;
+}
+
+body{
+    background-color: #FDFBFB;
+}
