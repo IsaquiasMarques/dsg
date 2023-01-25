@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "doces-e-salgados-da-graca"
+  },
+  "targets": {
+    "doces-e-salgados-da-graca": {
+      "hosting": {
+        "dsg-website": [
+          "doces-e-salgados-da-graca"
+        ]
+      }
+    }
+  }
+}

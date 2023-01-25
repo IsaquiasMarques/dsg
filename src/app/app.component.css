@@ -1,27 +1,55 @@
 header{
+    top: 0;
+    left: 0;
     position: fixed;
+    background-color: #fff;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 6%);
+    z-index: 20;
 }
-.desktop-menu{}
-.desktop-menu nav{}
 .desktop-menu nav ul{
     list-style: none;
+}
+
+.mobile-menu{
+    background-color: #fff;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 6%);
+    padding: 2.5rem 2rem;
+    transition: .7s;
+    height: 100vh;
+}
+
+.mobile-menu.non-visible{
+    top: -55rem;
+}
+.mobile-menu.visible{
+    top: 0rem;
+}
+
+.mobile-menu nav ul li{
+    display: block;
+    /* background-color: #fc0; */
+    margin: 0px 25px;
 }
 .desktop-menu nav ul li{
     display: inline-block;
     /* background-color: #fc0; */
     margin: 0px 25px;
 }
+
+.mobile-menu nav ul li{
+    text-align: center;
+    padding: 15px 5px;
+}
+
+.mobile-menu nav ul li a,
 .desktop-menu nav ul li a{
     font-size: 15px;
     text-transform: uppercase;
     color: var(--primary-color);
     padding: 5px;
 }
-.desktop-menu nav ul li a.active{}
-.desktop-menu nav ul li a:hover{}
 
-.contact-btn{}
+.contact-btn-mobile a,
 .contact-btn a{
     text-transform: uppercase;
     color: var(--primary-color);
@@ -29,4 +57,3 @@ header{
     border: 2px solid var(--primary-color);
     padding: 10px 20px;
 }
-.contact-btn a:hover{}

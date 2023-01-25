@@ -94,6 +94,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "dsg-website:build:production",
+            "firebaseProject": "doces-e-salgados-da-graca",
+            "firebaseHostingSite": "doces-e-salgados-da-graca"
+          }
         }
       }
     }

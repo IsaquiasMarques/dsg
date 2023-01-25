@@ -1,4 +1,4 @@
-<header class="w-full py-3 bg-white">
+<header class="w-full py-3">
     <div class="contain w-[90%] tablet:w-[95%] max-w-[1536px] bg-red-00 mx-auto flex justify-between items-center">
 
         <div class="logo">
@@ -8,13 +8,13 @@
         </div>
 
         <div class="menu">
-            <div class="mobile-menu laptop:hidden">
-                <a href="javascript:void(0)">
+            <div class="mobile-menu-icon laptop:hidden">
+                <a href="javascript:void(0)" (click)="this.changeMenuStatus()">
                     <img src="assets/svg/icons/menu-icon.svg" alt="">
                 </a>
             </div>
             <div class="desktop-menu hidden laptop:block">
-                <nav>
+                <nav class="">
                     <ul>
                         <li><a routerLink="">Página Inicial</a></li>
                         <li><a routerLink="">Precários</a></li>
@@ -23,6 +23,30 @@
                     </ul>
                 </nav>
             </div>
+
+            <div class="mobile-menu absolute left-0 w-full flex flex-col gap-y-20 justify-start items-center laptop:hidden"
+            [ngClass]="{'non-visible': !this.hasMenuToShow, 'visible': this.hasMenuToShow}"
+            >
+                <div class="header-menu-mobile w-full flex items-end justify-end">
+                    <a href="javascript:void(0)" (click)="this.changeMenuStatus()">
+                        <img src="assets/svg/icons/close-menu-mobile-icon.svg" alt="">
+                    </a>
+                </div>
+                <nav class="">
+                    <ul>
+                        <li><a routerLink="">Página Inicial</a></li>
+                        <li><a routerLink="">Precários</a></li>
+                        <li><a routerLink="">Serviços</a></li>
+                        <li><a routerLink="">Contactos</a></li>
+                    </ul>
+
+                    
+                    <div class="contact-btn-mobile mt-10">
+                        <a href="javascript:void(0)" class="block">Entrar em Contacto</a>
+                    </div>
+                </nav>
+            </div>
+            
         </div>
 
         <div class="contact-btn hidden laptop:block">
@@ -31,3 +55,22 @@
 
     </div>
 </header>
+
+<section class="content-body mt-24 laptop:mt-36">
+
+    <div class="contain">
+
+        <div class="banner">
+            <app-banner-mobile class="tablet:hidden"></app-banner-mobile>
+            <app-banner-bigger-screens class="hidden tablet:flex"></app-banner-bigger-screens>
+        </div>
+        
+        <div class="what-to-offer-section my-5">
+            <app-what-to-offer></app-what-to-offer>
+        </div>
+
+        <br><br><br><br><br>
+
+    </div>
+
+</section>

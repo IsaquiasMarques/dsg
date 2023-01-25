@@ -1,0 +1,30 @@
+/* Banner */
+.banner-header h1{
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.banner-mobile-screen .banner-image{
+    width: 100%;
+    height: 330px;
+    /* position: relative; */
+}
+.banner-mobile-screen .banner-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ask-for-gudget{
+    text-align: center;
+}
+.ask-for-gudget a{
+    width: fit-content;
+    font-size: 12px;
+    /* display: block; */
+    text-transform: uppercase;
+    color: #fff;
+    padding: 15px 50px;
+    background-color: var(--primary-color);
+}

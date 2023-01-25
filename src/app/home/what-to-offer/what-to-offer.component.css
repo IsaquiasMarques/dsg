@@ -1,0 +1,36 @@
+.section-header h1{
+    text-transform: uppercase;
+    font-family: 'Poppins';
+}
+.section-content-offering-component::-webkit-scrollbar{
+    display: none;
+}
+.boxes{
+    width: max-content;
+    height: max-content;
+}
+.box{
+    position: relative;
+}
+.box .content{
+    position: absolute;
+    transition: .6s;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+/* .box .content-button{} */
+.box .content-button a{
+    text-transform: uppercase;
+    border: 2px solid #fff;
+}
+.box:hover .content{
+    bottom: 0;
+}
+.buttons-slider a{
+    transition: .6s;
+}
+.buttons-slider a.disabled{
+    opacity: .5;
+}

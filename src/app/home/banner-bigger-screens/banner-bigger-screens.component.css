@@ -1,0 +1,23 @@
+/* .panel > div{
+    height: 336px;
+    width: 60%;
+} */
+
+.description-title h1{
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+.banner-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ask-for-gudget a{
+    width: fit-content;
+    /* display: block; */
+    text-transform: uppercase;
+    color: #fff;
+    padding: 15px 50px;
+    background-color: var(--primary-color);
+}
