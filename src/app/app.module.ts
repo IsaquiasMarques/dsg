@@ -3,20 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BannerMobileComponent } from './home/banner-mobile/banner-mobile.component';
-import { BannerBiggerScreensComponent } from './home/banner-bigger-screens/banner-bigger-screens.component';
-import { WhatToOfferComponent } from './home/what-to-offer/what-to-offer.component';
-
+import { HomeModule } from './home/home.module';
+import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BannerMobileComponent,
-    BannerBiggerScreensComponent,
-    WhatToOfferComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,15 +8,60 @@
         </div>
 
         <div class="menu">
+
             <div class="mobile-menu-icon flex gap-7 justify-center items-center laptop:hidden">
-                <a routerLink="/home" class="shopping-cart relative" [ngClass]="{'has-item': this.cart.cartLength() > 0}">
+                <a (click)="this.changeCartPanelStatus()" class="shopping-cart relative cursor-pointer" [ngClass]="{'has-item': this.cart.cartLength() > 0}">
                     <img src="assets/svg/icons/shopping-cart.png" width="30px" alt="">
                 </a>
+
+                <div class="cart-panel w-full left-0" [ngClass]="{'hide': !this.hasCartTohow, 'show': this.hasCartTohow}">
+
+                    <div class="cart-header flex justify-between items-center">
+                        <h1 class="font-bold text-[15px] uppercase">
+                            Meu carrinho
+                        </h1>
+                        <h1 class="font-bold text-[15px] uppercase">
+                            {{ this.cart.cartLength() }}
+                        </h1>
+                    </div>
+
+                    <div class="cart-body my-5 max-h-[350px] overflow-y-auto">
+                        <div class="list-cart-items" *ngIf="this.cart.cartLength() > 0">
+
+                            <div class="item flex justify-start gap-10 items-start mb-3"
+                            *ngFor="let item of this.cart.getCart()"
+                            >
+                                <div class="item-image">
+                                    <img src="{{ item.image }}" alt="">
+                                </div>
+                                <div class="item-description">
+                                    <div class="title">
+                                        <p class="font-semibold">{{ item.title }}</p>
+                                    </div>
+                                    <div class="actions">
+                                        <a (click)="removeItemFromCart(item.id)" class="cursor-pointer">Remover</a>
+                                    </div>
+                                </div>
+                            </div>
+                                                        
+                        </div>
+                    </div>
+
+                    <div class="cart-footer flex justify-between my-3" *ngIf="this.cart.cartLength() > 0">
+                        <div class="cancel-order">
+                            <a (click)="this.cleanCart()" class="text-[15px] cursor-pointer">Cancelar pedido</a>
+                        </div>
+                        <div class="finish-order">
+                            <a href="" class="text-[15px] p-2 bg-primary rounded-[5px]">Finalizar pedido</a>
+                        </div>
+                    </div>
+                </div>
 
                 <a href="javascript:void(0)" (click)="this.changeMenuStatus()">
                     <img src="assets/svg/icons/menu-icon.svg" alt="">
                 </a>
             </div>
+
             <div class="desktop-menu hidden laptop:block">
                 <nav class="">
                     <ul class="flex flex-row justify-center items-center">
@@ -25,9 +70,68 @@
                         <li><a routerLink="">Serviços</a></li>
                         <li><a routerLink="">Contactos</a></li>
                         <li class="shopping-cart relative" [ngClass]="{'has-item': this.cart.cartLength() > 0}">
-                            <a routerLink="">
+                            <a (click)="this.changeCartPanelStatus()" class="cursor-pointer">
                                 <img src="assets/svg/icons/shopping-cart.png" width="30px" alt="">
                             </a>
+                            <div class="cart-panel" [ngClass]="{'hide': !this.hasCartTohow, 'show': this.hasCartTohow}">
+                                
+                                <div class="cart-header flex justify-between items-center">
+                                    <h1 class="font-bold text-[15px] uppercase">
+                                        Meu carrinho
+                                    </h1>
+                                    <h1 class="font-bold text-[15px] uppercase">
+                                        {{ this.cart.cartLength() }}
+                                    </h1>
+                                </div>
+
+                                <div class="cart-body my-5 max-h-[350px] overflow-y-auto">
+                                    <div class="list-cart-items" *ngIf="this.cart.cartLength() > 0">
+
+                                        <div class="item flex justify-between items-start mb-3"
+                                        *ngFor="let item of this.cart.getCart()"
+                                        >
+                                            <div class="item-image">
+                                                <img src="{{ item.image }}" alt="">
+                                            </div>
+                                            <div class="item-description">
+                                                <div class="title"> 
+                                                    <p class="font-semibold">{{ item.title }}</p>
+                                                </div>
+                                                <div class="actions">
+                                                    <a (click)="removeItemFromCart(item.id)" class="cursor-pointer">Remover</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="item flex justify-between items-start mb-3"
+                                        >
+                                            <div class="item-image">
+                                                <img src="assets/images/img5.jpg" alt="">
+                                            </div>
+                                            <div class="item-description">
+                                                <div class="title"> 
+                                                    <p class="font-semibold">item.title</p>
+                                                </div>
+                                                <div class="actions">
+                                                    <a href="">Remover</a>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="cart-footer flex justify-between" *ngIf="this.cart.cartLength() > 0">
+                                    <div class="cancel-order">
+                                        <a (click)="this.cleanCart()" class="text-[15px] cursor-pointer">Cancelar pedido</a>
+                                    </div>
+                                    <div class="finish-order">
+                                        <a href="" class="text-[15px] p-2 bg-primary rounded-[5px]">
+                                            Finalizar pedido
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </nav>
@@ -68,18 +172,7 @@
 <section class="content-body mt-24 laptop:mt-36">
 
     <div class="contain">
-
-        <div class="banner">
-            <app-banner-mobile class="tablet:hidden"></app-banner-mobile>
-            <app-banner-bigger-screens class="hidden tablet:flex"></app-banner-bigger-screens>
-        </div>
-        
-        <div class="what-to-offer-section my-5">
-            <app-what-to-offer></app-what-to-offer>
-        </div>
-
-        <br><br><br><br><br>
-
+        <router-outlet></router-outlet>
     </div>
 
 </section>

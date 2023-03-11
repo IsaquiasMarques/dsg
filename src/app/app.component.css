@@ -62,19 +62,83 @@ header{
     padding: 15px 5px;
 }
 
-.mobile-menu nav ul li a,
-.desktop-menu nav ul li a{
+.mobile-menu nav > ul > li > a,
+.desktop-menu nav > ul > li > a{
     font-size: 15px;
     text-transform: uppercase;
     color: var(--primary-color);
     padding: 5px;
 }
 
-.contact-btn-mobile a,
-.contact-btn a{
+.contact-btn-mobile > a,
+.contact-btn > a{
     text-transform: uppercase;
     color: var(--primary-color);
     font-size: 15px;
     border: 2px solid var(--primary-color);
     padding: 10px 20px;
+}
+
+
+/*
+Cart Desktop
+*/
+
+.desktop-menu .cart-panel{
+    position: absolute;
+    width: 300px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+.mobile-menu-icon .cart-panel{
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+.desktop-menu .cart-panel.show{
+    top: 100% !important;
+}
+.mobile-menu-icon .cart-panel.show{
+    top: 100% !important;
+}
+.desktop-menu .cart-panel.hide{
+    top: -490px !important;
+}
+.mobile-menu-icon .cart-panel.hide{
+    top: -490px !important;
+}
+
+.cart-body .list-cart-items .item{}
+.cart-body .list-cart-items .item .item-image{
+    width: 100px;
+    height: 70px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.cart-body .list-cart-items .item .item-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.actions a{
+    text-transform: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #f33 !important;
+}
+.cart-footer{}
+.cart-footer .finish-order{}
+.cart-footer .finish-order a{
+    color: #fff !important;
+    text-transform: none !important;
+}
+
+.cart-footer .cancel-order{}
+.cart-footer .cancel-order a{
+    text-transform: none !important;
+    color: #f33 !important;
 }

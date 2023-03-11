@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { DataService } from '../data/data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor() {
+  constructor(
+    private data: DataService
+  ) {
     this.viewCart();
     this.cartLength();
   }
@@ -55,6 +58,18 @@ export class CartService {
 
   cartLength(){
     return this.cart.length;
+  }
+
+  getCart(){
+
+    let items: any = [];
+
+    this.cart.forEach((element: any) => {
+      items.push(this.data.getProductById(element));
+    });
+
+    return items;
+
   }
 
   refreshLocalStorage(){
