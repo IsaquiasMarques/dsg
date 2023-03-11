@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { CartService } from 'src/app/core/cart/cart.service';
+import { DataService } from 'src/app/core/data/data.service';
 
 @Component({
   selector: 'app-what-to-offer',
@@ -6,8 +8,13 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./what-to-offer.component.css']
 })
 export class WhatToOfferComponent implements OnInit {
+  
+  constructor(
+    private cakeType: DataService,
+    private cart: CartService
+  ) { }
 
-  constructor() { }
+  cak_types: any = this.cakeType.get_products();
 
   isNextClickable: boolean = true;
   isPrevClickable: boolean = false;
@@ -44,9 +51,12 @@ export class WhatToOfferComponent implements OnInit {
   }
 
   invertPrevAndNextValues(){
-    console.log("s");
     this.isNextClickable = !this.isNextClickable;
     this.isPrevClickable = !this.isPrevClickable;
+  }
+
+  addToCart(item: any){
+    this.cart.addToCart(item);
   }
 
   // @HostListener('wheel', ['$event'])

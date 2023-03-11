@@ -20,6 +20,9 @@
     width: 100%;
     background-color: var(--primary-color);
 }
+.box .content .content-header p{
+    font-family: 'Poppins';
+}
 /* .box .content-button{} */
 .box .content-button a{
     text-transform: uppercase;

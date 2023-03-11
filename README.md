@@ -6,4 +6,3 @@ Uma nova empresa que presta serviços de confeiteria. Confiou-me a responsabilid
 
 Link para a visualização do Projecto
 `https://doces-e-salgados-da-graca.web.app/`.
-

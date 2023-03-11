@@ -17,6 +17,17 @@ header{
     transition: .7s;
     height: 100vh;
 }
+.mobile-menu-icon .shopping-cart.has-item::after{
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color: #f33;
+    border-radius: 50%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-100%);
+}
 
 .mobile-menu.non-visible{
     top: -55rem;
@@ -31,9 +42,19 @@ header{
     margin: 0px 25px;
 }
 .desktop-menu nav ul li{
-    display: inline-block;
     /* background-color: #fc0; */
     margin: 0px 25px;
+}
+.desktop-menu nav ul li.shopping-cart.has-item::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f33;
+    border-radius: 50%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-100%);
 }
 
 .mobile-menu nav ul li{

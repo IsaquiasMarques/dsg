@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { CartService } from './core/cart/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,10 @@ import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular
 export class AppComponent implements OnInit, OnChanges, OnDestroy {
 
   public hasMenuToShow: boolean = false;
+
+  constructor(
+    public cart: CartService
+  ){ }
 
   ngOnInit(): void {
     

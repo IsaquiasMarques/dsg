@@ -8,18 +8,27 @@
         </div>
 
         <div class="menu">
-            <div class="mobile-menu-icon laptop:hidden">
+            <div class="mobile-menu-icon flex gap-7 justify-center items-center laptop:hidden">
+                <a routerLink="/home" class="shopping-cart relative" [ngClass]="{'has-item': this.cart.cartLength() > 0}">
+                    <img src="assets/svg/icons/shopping-cart.png" width="30px" alt="">
+                </a>
+
                 <a href="javascript:void(0)" (click)="this.changeMenuStatus()">
                     <img src="assets/svg/icons/menu-icon.svg" alt="">
                 </a>
             </div>
             <div class="desktop-menu hidden laptop:block">
                 <nav class="">
-                    <ul>
+                    <ul class="flex flex-row justify-center items-center">
                         <li><a routerLink="">Página Inicial</a></li>
                         <li><a routerLink="">Precários</a></li>
                         <li><a routerLink="">Serviços</a></li>
                         <li><a routerLink="">Contactos</a></li>
+                        <li class="shopping-cart relative" [ngClass]="{'has-item': this.cart.cartLength() > 0}">
+                            <a routerLink="">
+                                <img src="assets/svg/icons/shopping-cart.png" width="30px" alt="">
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
